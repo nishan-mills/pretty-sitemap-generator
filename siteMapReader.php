@@ -58,7 +58,12 @@ function displayArrayRecursively($array, $urlArray , $keysString = 'http://')
     foreach ($array as $key => $value) {
     	if(!empty($key)){
     		$CurrentkeysString = $keysString.$key.'/';
-    		echo "<li class='has-child'>";
+    		if(is_array($value)){
+    			echo "<li class='has-child'>";
+    		}
+    		else{
+					echo "<li>";
+    		}
 	    		if (in_array($CurrentkeysString, $urlArray) || 
 	    			in_array(substr($CurrentkeysString,  0 , strlen($CurrentkeysString)-1), $urlArray)) {
     				echo '<a href="'.$CurrentkeysString.'">';
