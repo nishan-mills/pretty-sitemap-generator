@@ -9,7 +9,7 @@
 	/* Defining Variables */
 	$URLS = array();
 	$Formatted_List_Array = array();
-	$fileToRead = "sitemap.xml";
+	$fileToRead = "sitemaplatestAAA.xml";
 	$depthToBreak = 5;
 	$httpProtocol = "http://";
 
