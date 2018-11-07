@@ -1,0 +1,53 @@
+@font-face {
+	font-family: "icons";
+	src: url('../../assets/fonts/icons/icons.eot');
+	src: url('../../assets/fonts/icons/icons.eot?#iefix') format('eot'),
+		url('../../assets/fonts/icons/icons.woff2') format('woff2'),
+		url('../../assets/fonts/icons/icons.woff') format('woff'),
+		url('../../assets/fonts/icons/icons.ttf') format('truetype'),
+		url('../../assets/fonts/icons/icons.svg#icons') format('svg');
+}
+
+/* stylelint-disable */
+@mixin icon-styles {
+	font-family: "icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == icon-down-arrow {
+		$char: "\E001";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-icon-down-arrow {
+	@include icon(icon-down-arrow);
+}
+
+/* stylelint-enable */

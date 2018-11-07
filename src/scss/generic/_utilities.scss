@@ -1,0 +1,15 @@
+.desktop {
+  display: none;
+
+  @include grid-media($md) {
+    display: block;
+  }
+}
+
+.mobile {
+  display: block;
+
+  @include grid-media($md) {
+    display: none;
+  }
+}

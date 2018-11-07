@@ -1,0 +1,41 @@
+// LAYOUT
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: $white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  @include grid-container;
+
+  margin: 0 auto;
+  max-width: $container-width;
+  padding: 0 15px;
+
+  &--small {
+    max-width: $container-small;
+  }
+}

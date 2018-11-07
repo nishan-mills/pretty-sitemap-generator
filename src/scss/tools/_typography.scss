@@ -1,0 +1,154 @@
+// TYPOGRAPHY
+
+$font-thinnest: 100;
+$font-thinner: 200;
+$font-thin: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+$sans-stack: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+$headlines: 'Montserrat', $sans-stack;
+$serif-stack: 'Georgia', Times, Times New Roman, serif;
+$gill-sans: 'Gill Sans Infant', Helvetica Neue, Helvetica, Arial, sans-serif;
+$trade-gothic: 'Trade Gothic', Helvetica Neue, Helvetica, Arial, sans-serif;
+
+/* stylelint-disable */
+@mixin default($color: $black) {
+  color: #{$color};
+  font-family: $gill-sans;
+  font-size: 18px;
+  font-weight: $font-normal;
+  line-height: 1.2;
+
+  @include grid-media($md) {
+    line-height: 1.67;
+  }
+}
+
+@mixin type-1($color: $black) {
+  color: #{$color};
+  font-family: $trade-gothic;
+  font-size: 48px;
+  font-weight: $font-semibold;
+  line-height: 1.2;
+}
+
+@mixin type-2($color: $black) {
+  color: #{$color};
+  font-family: $trade-gothic;
+  font-size: 36px;
+  font-weight: $font-semibold;
+  line-height: 1.2;
+}
+
+@mixin type-3($color: $black) {
+  color: #{$color};
+  font-family: $trade-gothic;
+  font-size: 28px;
+  font-weight: $font-semibold;
+  line-height: 1.2;
+}
+
+@mixin type-4($color: $black) {
+  color: #{$color};
+  font-family: $trade-gothic;
+  font-size: 24px;
+  font-weight: $font-semibold;
+  line-height: 1.2;
+}
+
+@mixin type-5($color: $black) {
+  color: #{$color};
+  font-family: $trade-gothic;
+  font-size: 20px;
+  font-weight: $font-semibold;
+  line-height: 1.2;
+}
+
+@mixin type-6($color: $black) {
+  color: #{$color};
+  font-family: $trade-gothic;
+  font-size: 12px;
+  font-weight: $font-semibold;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+@mixin type-custom($color: #{$color}, $font-family: #{$font-family}, $font-weight: #{$font-weight}, $font-size: #{$font-size}, $line-height: #{$line-height} ) {
+  color: #{$color};
+  font-family: #{$font-family};
+  font-size: #{$font-size};
+  font-weight: #{$font-weight};
+  line-height: #{$line-height};
+}
+/* stylelint-enable */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $black;
+  margin-bottom: .7em;
+  margin-top: 1em;
+}
+
+/* stylelint-disable */
+// HEADING TEXT 1
+h1 {
+  @include type-1;
+  text-transform: uppercase;
+}
+
+// HEADING TEXT 2
+h2 {
+  @include type-2;
+  text-transform: uppercase;
+}
+
+// HEADING TEXT 3
+h3 {
+  @include type-3;
+}
+
+// HEADING TEXT 4
+h4 {
+  @include type-4;
+}
+
+// HEADING TEXT 5
+h5 {
+  @include type-5;
+}
+
+// BODY TEXT
+
+body {
+  @include default;
+}
+
+p {
+  @include default;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  &.small-text {
+    @include type-6;
+  }
+}
+/* stylelint-enable */
+
+strong {
+  font-weight: $font-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+// Custom styles
+.title {
+  margin-top: 0;
+}
